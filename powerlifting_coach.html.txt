@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Powerlifting Coach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #000;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .coaching-package {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 80px 0;
+            padding: 0 20px;
+        }
+
+        .coaching-package:nth-child(even) {
+            direction: rtl;
+        }
+
+        .coaching-package:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .package-image {
+            width: 100%;
+            height: 400px;
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-content h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .package-content p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #fff;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .package-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+            color: #fff;
+        }
+
+        .package-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff9800;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .price {
+            font-size: 2.5em;
+            color: #fff;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff9800;
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            background: #f57c00;
+        }
+
+        .testimonials {
+            background: #fff;
+            padding: 80px 20px;
+            margin-top: 80px;
+            color: #000;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #000;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #fff;
+            color: #000;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #222;
+            margin-right: 20px;
+            overflow: hidden;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .testimonial-text {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        .contact-section {
+            background: #000;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .contact-section a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .coaching-package {
+                grid-template-columns: 1fr;
+                margin: 40px 0;
+            }
+
+            .coaching-package:nth-child(even) {
+                direction: ltr;
+            }
+
+            .package-image {
+                height: 300px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Coaching Options</h1>
+        <p>Data driven online coaching for powerlifters, from beginner to international levels</p>
+    </div>
+
+    <div class="container">
+        <div class="coaching-package">
+            <div class="package-image">
+                <img src="powerlifting_image_1.jpg" alt="Australian Powerlifter competing with team">
+            </div>
+            <div class="package-content">
+                <h2>High Contact Online Coaching</h2>
+                <p> Access the most comprehensive coaching service we offer. Used by athletes of all levels, up to international level lifters in the IPF</p>
+
+                <ul class="package-features">
+                    <li>Individualised programming</li>
+                    <li>High contact communication through WhatsApp daily</li>
+                    <li>Comprehensive data tracking and analysis to remove the guesswork</li>
+                    <li>Custom peaking and tapering going into meet day</li>
+                    <li>Meet day strategy and development</li>
+                    <li>Competition day handling (subject to location and availability)</li>
+                </ul>
+
+                <div class="price">$65AUD/week</div>
+                <a href="mailto:your.email@example.com" class="cta-button">ENQUIRE NOW</a>
+            </div>
+        </div>
+
+        <div class="coaching-package">
+            <div class="package-image">
+                <!-- Replace with: <img src="your-powerlifting-squad-photo.jpg" alt="Powerlifting Squad Competition"> -->
+            </div>
+            <div class="package-content">
+                <h2>Custom Powerlifting Programs</h2>
+                <p>Want individualised programming without breaking the bank? Our custom macrocycles are designed to get you as strong as possible with the same systems used in high contact online coaching.</p>
+
+                <ul class="package-features">
+                    <li>Individualised 12 week program</li>
+                    <li>Initial video call to discuss important details like injury history, training history, important dates such as meets, and more</li>
+                    <li>Technique review and adjustments during call</li>
+                    <li>Comprehensive data tracking and analysis to remove the guesswork</li>
+                    <li>Availability to answer questions throughout the program</li>
+                    <li>Custom peaking and tapering going into meet day</li>
+                    <li>Once the program is finished, book another call, data will be reviewed, adjustments made, technique reviewed, and new program created</li>
+                </ul>
+
+                <div class="price">$180AUD per program</div>
+                <a href="mailto:your.email@example.com" class="cta-button">APPLY NOW</a>
+            </div>
+        </div>
+
+    <div class="testimonials">
+        <h2>Hear from our Athletes</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-image">
+                        <!-- Optional: <img src="athlete1.jpg" alt="Athlete Name"> -->
+                    </div>
+                    <div class="testimonial-name">Riley Quire</div>
+                </div>
+                <p class="testimonial-text">"Quite literally an absolute game changer going with Adaptive Performance. I thought I was strong before following some basic stuff, boy was I wrong. We’ve gone from a 500 total to 625 on a bad day in two years. Chris just runs some calculations, I do what I’m told and weight just appears on the bar."</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-image">
+                        <!-- Optional: <img src="athlete2.jpg" alt="Athlete Name"> -->
+                    </div>
+                    <div class="testimonial-name">Rachel Elms</div>
+                </div>
+                <p class="testimonial-text">"Not only does Chris use evidence based methods to bring the best out of his athletes, he also takes into consideration the humans he is working with. Chris is the first coach I’ve had who has worked WITH me to achieve my goals."</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-image">
+                        <!-- Optional: <img src="athlete3.jpg" alt="Athlete Name"> -->
+                    </div>
+                    <div class="testimonial-name">Clinton Tran</div>
+                </div>
+                <p class="testimonial-text">"Chris is an outstanding powerlifting coach! He has exceptional knowledge and is a fantastic, clear communicator, making complex techniques easy to understand and apply."</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Let's talk about your strength goals.</p>
+        <p>Instagram: <a href="https://instagram.com/chris_adaptive" target="_blank">@chris_adaptive</a></p>
+    </div>
+</body>
+</html>
